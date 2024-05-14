@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Preguntas frecuentes</title>
+        <link rel="shortcut icon" type="image/png" href="Fotos La Dolça de Sarrià/Icono cake.svg">
+        <!-- <span class="material-symbols-outlined">cake</span> -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <a href="home.html"><img src="Fotos La Dolça de Sarrià/Frame 1000001343.svg" class="logo" alt="Logo web"></a>
+            <div>
+                <ul id="navbar">
+                    <li><a href="pasteles.html">Pasteles</a></li>
+                    <li><a href="postres.html">Postres</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a class="active" href="contacto.html">Contacto</a></li>
+                    <li id="cart"><a href="cart.html"><i class="fa-solid fa-cart-plus"></i></a></li>
+                    <a href="#" id="close"><i class="far fa-times"></i></a>
+                </ul>
+            </div>
+            <div id="mobile">
+                <a href="cart.html"><i class="fa-solid fa-cart-plus"></i></a>
+                <i id="bar" class="fas fa-outdent"></i>
+            </div>
+        </header>
+        <main>
+            <section class="herosearches">
+                <div class="herosearch">
+                    <div class="herosearchtext">
+                        <h2>Preguntas Frecuentes</h2>
+                        <p>Consulta nuestras Preguntas Frecuentes por temática y resuelve todas tus dudas</p>
+                    </div>
+                </div>
+            </section>
+            <section id="faqs" class="section-p1">
+                <div class="faqstitle">
+                    <h3>Temáticas de nuestras FAQ's</h3>
+                    <p>Busca qué tipo de duda tienes y obtén la respuesta que necesitas.</p>
+                    <p>¿No encuentras lo que buscas? Recuerda que siempre puedes <a href="contacto.html">contactarnos</a> y te ayudaremos lo antes posible</p>
+                    <br>
+                    <div class="faqstopics">
+                        <div class="faqstopic" data-target="faqspedidos">
+                            <div class="position first"></div>
+                            <div class="faqtopic" >Pedidos, reclamaciones y devoluciones</div>
+                        </div>
+                        <div class="faqstopic" data-target="faqsinformación">
+                            <div class="position"></div>
+                            <div class="faqtopic">Dudas generales de la plataforma</div>                        </div>
+                        </div>
+                        <div class="faqstopic" data-target="faqsempresa">
+                            <div class="position"></div>
+                            <div class="faqtopic" >Colaboración con empresas</div>
+                        </div>
+                        <div class="faqstopic" data-target="faqscatering">
+                            <div class="position"></div>
+                            <div class="faqtopic">Servicios de catering</div>
+                        </div>
+                        <div class="faqstopic" data-target="faqstalleres">
+                            <div class="position last"></div>
+                            <div class="faqtopic" >Servicios de talleres</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faqsspace">
+                    <div class="faqsactive"></div>
+                </div>
+                <div class="faqslist">
+                    <div class="faqlist" id="faqspedidos">
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faqlist faqsactive" id="faqsinformación">
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Hola?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faqlist" id="faqsempresa">
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Adiós?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faqlist" id="faqscatering">
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Hasta luego?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faqlist" id="faqstalleres">
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿que vaya bien?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-box-question">
+                                <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                                <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                            </div>
+                            <div class="faq-box-answer">
+                                <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="section-p1">
+                <div class="footercontent">
+                    <div class="column" class="información">
+                        <img src="Fotos La Dolça de Sarrià/Frame 1000001343.svg" alt="Logo empresa">
+                        <h4>Contacto</h4>
+                        <p><strong>Dirección:</strong> Carrer de Fontcoberta, 23, 08034, Barcelona</p>
+                        <p><strong>Teléfono:</strong> +34 616 76 51 51</p>
+                        <p><strong>Correo:</strong> Carrer de Fontcoberta, 23, 08034, Barcelona</p>
+                        <p><strong>Horario de apertura:</strong> Lunes a Viernes: 8-21h; Festivos: 9-16h</p>
+                        <div class="follow">
+                            <h4>¡Síguenos!</h4>
+                            <div class="iconos">
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-instagram"></i>
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                        </div>             
+                    </div>
+                    <div class="column" id="productosfooter">
+                        <h4><strong>Productos</strong></h4>
+                            <a href="Pasteles.html" alt="Redirección a la página de nuestros pasteles" title="Conoce nuestros pasteles" target="_blank" id=pasteles>Pasteles</a>
+                            <a href="Postres.html" alt="Redirección a la página de nuestros postres" title="Conoce nuestros postres" target="_blank" id=postres>Postres</a>
+                            <a href="Postres.html" alt="Redirección a la página de nuestros postres" title="Conoce nuestros postres" target="_blank" id=postres>Pastas de sobremesa</a>
+                            <a href="Pasteles.html" alt="Redirección a la página de nuestros pasteles" title="Conoce nuestros pasteles" target="_blank" id=pasteles>Guisos</a>
+                    </div>
+                    <div class="column" class="serviciosfooter">
+                        <h4><strong>Servicios</strong></h4>
+                            <a href="Catering.html" alt="Redirección a la página de catering" title="Conoce nuestros servicios de catering" target="_blank" id=catering>Catering</a>
+                            <a href="Servicios.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Servicios</a>
+                    </div>
+                    <div class="column" class="informaciónfooter">
+                        <h4><strong>Información</strong></h4>
+                            <a href="Catering.html" alt="Redirección a la página de catering" title="Conoce nuestros servicios de catering" target="_blank" id=catering>Nosotros</a>
+                            <a href="Servicios.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Alérgenos</a>
+                            <a href="Catering.html" alt="Redirección a la página de catering" title="Conoce nuestros servicios de catering" target="_blank" id=catering>Problemas con el pedido</a>
+                            <a href="Servicios.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Reclamaciones</a>
+                    </div>
+                    <div class="column" class="legalfooter">
+                        <h4><strong>Legal</strong></h4>
+                            <a href="Catering.html" alt="Redirección a la página de catering" title="Conoce nuestros servicios de catering" target="_blank" id=catering>Términos y condiciones</a>
+                            <a href="Servicios.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Política de devolución</a>
+                            <a href="Servicios.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Política de cancelación</a>
+                    </div>
+                    <div class="pago">
+                        <p> Métodos de pago aceptados
+                            <img src="Fotos La Dolça de Sarrià/Métodos de pago.png">
+                        </p>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <div>@2024, La Dolça de Sarrià. Todos los derechos reservados.</div>
+                    <br>
+                    <div>Hecho con<span class="material-symbols-outlined">favorite</span>en Barcelona</div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

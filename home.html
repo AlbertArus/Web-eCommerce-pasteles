@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ecommerce website</title>
+        <link rel="shortcut icon" type="image/png" href="Fotos La Dolça de Sarrià/Icono cake.svg">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="home.html"><img src="Fotos La Dolça de Sarrià/Frame 1000001343.svg" class="logo" alt="Logo web"></a>
+            <div>
+                <ul id="navbar">
+                    <li>
+                        <a class="navbaritem" href="pasteles.html">Pasteles<span class="material-symbols-outlined arrowheader">keyboard_arrow_down</span></a>
+                        <div class="headerdesplegable">
+                            <ul id="listaheaderdesplegable">
+                                <li><a href="pasteles.html#clásicos">Clásicos</a></li>
+                                <li><a href="pasteles.html#cumpleaños">Cumpleaños</a></li>
+                                <li><a href="pasteles.html#fondant">Fondant</a></li>
+                                <li><a href="pasteles.html#temáticos">Temáticos</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="navbaritem" href="postres.html">Postres<span class="material-symbols-outlined arrowheader">keyboard_arrow_down</span></a>
+                        <div class="headerdesplegable">
+                            <ul id="listaheaderdesplegable">
+                                <li><a href="pasteles.html#clásicos">Fríos</a></li>
+                                <li><a href="pasteles.html#cumpleaños">Calientes</a></li>
+                                <li><a href="pasteles.html#fondant">Sobremesa</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="navbaritem" href="servicios.html">Servicios<span class="material-symbols-outlined arrowheader">keyboard_arrow_down</span></a>
+                        <div class="headerdesplegable">
+                            <ul id="listaheaderdesplegable">
+                                <li><a href="pasteles.html#catering">Catering</a></li>
+                                <li><a href="pasteles.html#empresas">Empresas</a></li>
+                                <li><a href="pasteles.html#talleres">Talleres</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li>
+                        <a class="navbaritem" href="contacto.html">Contacto<span class="material-symbols-outlined arrowheader">keyboard_arrow_down</span></a>
+                        <div class="headerdesplegable">
+                            <ul id="listaheaderdesplegable">
+                                <li><a href="contacto.html#FAQ's">FAQ's</a></li>
+                                <li><a href="pasteles.html#contacto">Contacto</a></li>
+                            </ul>
+                        </div> 
+                    </li>
+                    <li><a href="favorite.html" class="favorite"><span class="material-symbols-outlined favorite">favorite</span></a></li>
+                    <li><a href="cart.html" class="cart"><span class="material-symbols-outlined cart">redeem</span></a></li>        
+                    <a href="#" id="close"><span class="material-symbols-outlined">close</span></a>
+                </ul>
+            </div>
+            <div id="mobile">
+                <a href="cart.html"><i class="fa-solid fa-cart-plus"></i></a>
+                <i id="bar" class="fas fa-outdent"></i>
+            </div>
+        </header>
+        <main>
+            <section class="hero">
+                <div class="herocontent">
+                    <div class="herotext">
+                        <h2>Pasteles, postres y catering, cuando y donde quieras!</h2>
+                        <p>Tu pastelería de confianza, ahora también digital</p>
+                        <div class="herocta">
+                            <button class="cta"><a href="pasteles.html">Ver pasteles</a></button>
+                            <button class="cta"><a href="postres.html">Ver postres</a></button>
+                        </div>
+                    </div>
+                    <div class="heroimage">
+                        <img src="Fotos La Dolça de Sarrià/pastelero 2.png">
+                    </div>
+                </div>
+            </section>
+            <section class="kpis">
+                    <div class="kpi">
+                        <div>
+                            <h4>Recetas</h4>
+                            <p>+224</p>
+                        </div>
+                    </div>
+                    <div class="kpi">
+                        <div>
+                            <h4>Clientes</h4>
+                            <p>+2.874</p>
+                        </div>
+                    </div>
+                    <div class="kpi">
+                        <div>
+                            <h4>Satisfacción</h4>
+                            <!-- <div class="datossatisfaccion">
+                                <span class="material-symbols-outlined iconfilled">grade</span>
+                                <p>4.7</p>
+                            </div> -->
+                            <div class="datossatisfaccion">
+                                <p>+4.7/5</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kpi">
+                        <div>
+                            <h4>Cobertura</h4>
+                            <p>Barcelona</p>
+                        </div>
+                    </div>
+            </section>
+            <section id="categories" class="section-p1">
+                <div class="categoriestitle">
+                    <h2>Nuestros servicios</h2>
+                    <p>Descubre todo lo que podemos ofrecerte.</p>
+                    <p>Nos adaptamos a tu necesidad. Tu solo céntrate en disfrutar</p>
+                </div>
+                <div class="categories">
+                    <div class="categories-box">
+                        <img src="Fotos La Dolça de Sarrià/Carrot cake 6.jpg">
+                        <h6>Nuestra especialidad</h6>
+                        <h3>Pasteles</h3>
+                        <p>Todos los pasteles que deseas, personalizados</p>
+                        <button class="transparent"><a href="pasteles.html">Ir a Pasteles</a></button>
+                    </div>
+                    <div class="categories-box categories-box2">
+                        <img src="Fotos La Dolça de Sarrià/Lenguas de gato.jpg">
+                        <h6>Acompaña tus comidas</h6>
+                        <h3>Postres</h3>
+                        <p>Haz de las sobremesas el momento más dulce</p>
+                        <button class="transparent"><a href="postres.html">Ir a Postres</a></button>
+                    </div>
+                    <div class="categories-box categories-box3">
+                        <img src="Fotos La Dolça de Sarrià/catering.jpg">
+                        <h6>¿Evento grande? ¡Nos encargamos!</h6>
+                        <h3>Catering</h3>
+                        <p>Despreocúpate de cocinar y disfruta de tu evento con nuestros platos</p>
+                        <button class="transparent"><a href="catering.html">Ir a Catering</a></button>
+                    </div>
+                    <div class="categories-box categories-box4">
+                        <img src="Fotos La Dolça de Sarrià/taller cocina.jpg">
+                        <h6>¿Colaboramos?</h6>
+                        <h3>Servicios</h3>
+                        <p>Te enseñamos a cocinar y preparar tu mismo nuestras delicias</p>
+                        <button class="transparent"><a href="servicios.html">Ir a Servicios</a></button>
+                    </div>
+                </div>
+            </section>
+            <section id="featured" class="section-p1">
+                <div class="featured">
+                    <h2>Los favoritos de nuestros clientes</h2>
+                    <p>Nuestros productos son nuestro mayor orgullo. Descubre algunas de nuestras mejores creaciones</p>
+                    <div class="product-container">
+                        <div class="product">
+                            <div class="product-slide">
+                                <div class="mainspace">
+                                    <div class="product-back">
+                                        <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                                    </div>
+                                    <img class="main">
+                                    <div class="product-forward">
+                                        <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                                    </div>
+                                </div>
+                                <div class="productsupportimages">
+                                    <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie">
+                                    <img src="Fotos La Dolça de Sarrià/Cheesecake.jpg" alt="Cheesecake" class="mainpicture">
+                                    <img src="Fotos La Dolça de Sarrià/coca de san juan.jpg" alt="san juan">
+                                    <img src="Fotos La Dolça de Sarrià/Roscón de reyes.jpg" alt="roscon">
+                                </div>
+                            </div>
+                            <div class="description">
+                                <span class="tag pastel">Pastel</span>
+                                <span class="tag frio">Frío</span>
+                                <h5>Brownie de chocolate y nueces</h5>
+                                <div class="product-star">
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                </div>
+                                <div class="product-price-save-pay">
+                                    <h4>38.8 €</h4>
+                                    <a href="#"><span class="material-symbols-outlined favorite">favorite</span></a>                            
+                                    <a href="#"><span class="material-symbols-outlined cart">redeem</span></a>        
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-slide">
+                                <div class="mainspace">
+                                    <div class="product-back">
+                                        <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                                    </div>
+                                    <img class="main">
+                                    <!-- <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie"> -->
+                                    <div class="product-forward">
+                                        <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                                    </div>
+                                </div>
+                                <div class="productsupportimages">
+                                    <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie">
+                                    <img src="Fotos La Dolça de Sarrià/Cheesecake.jpg" alt="Cheesecake" class="mainpicture">
+                                    <img src="Fotos La Dolça de Sarrià/coca de san juan.jpg" alt="san juan">
+                                    <img src="Fotos La Dolça de Sarrià/Roscón de reyes.jpg" alt="roscon">
+                                </div>
+                            </div>
+                            <div class="description">
+                                <span class="tag pastel">Pastel</span>
+                                <span class="tag frio">Frío</span>
+                                <h5>Brownie de chocolate y nueces</h5>
+                                <div class="product-star">
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                </div>
+                                <div class="product-price-save-pay">
+                                    <h4>38.8 €</h4>
+                                    <a href="#"><span class="material-symbols-outlined favorite">favorite</span></a>                            
+                                    <a href="#"><span class="material-symbols-outlined cart">redeem</span></a>        
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-slide">
+                                <div class="mainspace">
+                                    <div class="product-back">
+                                        <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                                    </div>
+                                    <img class="main">
+                                    <!-- <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie"> -->
+                                    <div class="product-forward">
+                                        <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                                    </div>
+                                </div>
+                                <div class="productsupportimages">
+                                    <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie">
+                                    <img src="Fotos La Dolça de Sarrià/Cheesecake.jpg" alt="Cheesecake" class="mainpicture">
+                                    <img src="Fotos La Dolça de Sarrià/coca de san juan.jpg" alt="san juan">
+                                    <img src="Fotos La Dolça de Sarrià/Roscón de reyes.jpg" alt="roscon">
+                                </div>
+                            </div>
+                            <div class="description">
+                                <span class="tag pastel">Pastel</span>
+                                <span class="tag frio">Frío</span>
+                                <h5>Brownie de chocolate y nueces</h5>
+                                <div class="product-star">
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                </div>
+                                <div class="product-price-save-pay">
+                                    <h4>38.8 €</h4>
+                                    <a href="#"><span class="material-symbols-outlined favorite">favorite</span></a>                            
+                                    <a href="#"><span class="material-symbols-outlined cart">redeem</span></a>        
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-slide">
+                                <div class="mainspace">
+                                    <div class="product-back">
+                                        <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                                    </div>
+                                    <img class="main">
+                                    <!-- <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie"> -->
+                                    <div class="product-forward">
+                                        <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                                    </div>
+                                </div>
+                                <div class="productsupportimages">
+                                    <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie">
+                                    <img src="Fotos La Dolça de Sarrià/Cheesecake.jpg" alt="Cheesecake" class="mainpicture">
+                                    <img src="Fotos La Dolça de Sarrià/coca de san juan.jpg" alt="san juan">
+                                    <img src="Fotos La Dolça de Sarrià/Roscón de reyes.jpg" alt="roscon">
+                                </div>
+                            </div>
+                            <div class="description">
+                                <span class="tag pastel">Pastel</span>
+                                <span class="tag frio">Frío</span>
+                                <h5>Brownie de chocolate y nueces</h5>
+                                <div class="product-star">
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                </div>
+                                <div class="product-price-save-pay">
+                                    <h4>38.8 €</h4>
+                                    <a href="#"><span class="material-symbols-outlined favorite">favorite</span></a>                            
+                                    <a href="#"><span class="material-symbols-outlined cart">redeem</span></a>        
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-slide">
+                                <div class="mainspace">
+                                    <div class="product-back">
+                                        <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                                    </div>
+                                    <img class="main">
+                                    <!-- <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie"> -->
+                                    <div class="product-forward">
+                                        <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                                    </div>
+                                </div>
+                                <div class="productsupportimages">
+                                    <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie">
+                                    <img src="Fotos La Dolça de Sarrià/Cheesecake.jpg" alt="Cheesecake" class="mainpicture">
+                                    <img src="Fotos La Dolça de Sarrià/coca de san juan.jpg" alt="san juan">
+                                    <img src="Fotos La Dolça de Sarrià/Roscón de reyes.jpg" alt="roscon">
+                                </div>
+                            </div>
+                            <div class="description">
+                                <span class="tag pastel">Pastel</span>
+                                <span class="tag frio">Frío</span>
+                                <h5>Brownie de chocolate y nueces</h5>
+                                <div class="product-star">
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                </div>
+                                <div class="product-price-save-pay">
+                                    <h4>38.8 €</h4>
+                                    <a href="#"><span class="material-symbols-outlined favorite">favorite</span></a>                            
+                                    <a href="#"><span class="material-symbols-outlined cart">redeem</span></a>        
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-slide">
+                                <div class="mainspace">
+                                    <div class="product-back">
+                                        <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                                    </div>
+                                    <img class="main">
+                                    <!-- <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie"> -->
+                                    <div class="product-forward">
+                                        <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                                    </div>
+                                </div>
+                                <div class="productsupportimages">
+                                    <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie">
+                                    <img src="Fotos La Dolça de Sarrià/Cheesecake.jpg" alt="Cheesecake" class="mainpicture">
+                                    <img src="Fotos La Dolça de Sarrià/coca de san juan.jpg" alt="san juan">
+                                    <img src="Fotos La Dolça de Sarrià/Roscón de reyes.jpg" alt="roscon">
+                                </div>
+                            </div>
+                            <div class="description">
+                                <span class="tag pastel">Pastel</span>
+                                <span class="tag frio">Frío</span>
+                                <h5>Brownie de chocolate y nueces</h5>
+                                <div class="product-star">
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                </div>
+                                <div class="product-price-save-pay">
+                                    <h4>38.8 €</h4>
+                                    <a href="#"><span class="material-symbols-outlined favorite">favorite</span></a>                            
+                                    <a href="#"><span class="material-symbols-outlined cart">redeem</span></a>        
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-slide">
+                                <div class="mainspace">
+                                    <div class="product-back">
+                                        <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                                    </div>
+                                    <img class="main">
+                                    <!-- <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie"> -->
+                                    <div class="product-forward">
+                                        <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                                    </div>
+                                </div>
+                                <div class="productsupportimages">
+                                    <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie">
+                                    <img src="Fotos La Dolça de Sarrià/Cheesecake.jpg" alt="Cheesecake" class="mainpicture">
+                                    <img src="Fotos La Dolça de Sarrià/coca de san juan.jpg" alt="san juan">
+                                    <img src="Fotos La Dolça de Sarrià/Roscón de reyes.jpg" alt="roscon">
+                                </div>
+                            </div>
+                            <div class="description">
+                                <span class="tag pastel">Pastel</span>
+                                <span class="tag frio">Frío</span>
+                                <h5>Brownie de chocolate y nueces</h5>
+                                <div class="product-star">
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                </div>
+                                <div class="product-price-save-pay">
+                                    <h4>38.8 €</h4>
+                                    <a href="#"><span class="material-symbols-outlined favorite">favorite</span></a>                            
+                                    <a href="#"><span class="material-symbols-outlined cart">redeem</span></a>        
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-slide">
+                                <div class="mainspace">
+                                    <div class="product-back">
+                                        <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                                    </div>
+                                    <img class="main">
+                                    <!-- <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie"> -->
+                                    <div class="product-forward">
+                                        <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                                    </div>
+                                </div>
+                                <div class="productsupportimages">
+                                    <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie">
+                                    <img src="Fotos La Dolça de Sarrià/Cheesecake.jpg" alt="Cheesecake" class="mainpicture">
+                                    <img src="Fotos La Dolça de Sarrià/coca de san juan.jpg" alt="san juan">
+                                    <img src="Fotos La Dolça de Sarrià/Roscón de reyes.jpg" alt="roscon">
+                                </div>
+                            </div>
+                            <div class="description">
+                                <span class="tag pastel">Pastel</span>
+                                <span class="tag frio">Frío</span>
+                                <h5>Brownie de chocolate y nueces</h5>
+                                <div class="product-star">
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                    <span class="material-symbols-outlined iconfilled">star</span>
+                                </div>
+                                <div class="product-price-save-pay">
+                                    <h4>38.8 €</h4>
+                                    <a href="#"><span class="material-symbols-outlined favorite">favorite</span></a>                            
+                                    <a href="#"><span class="material-symbols-outlined cart">redeem</span></a>        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- <section id="features" class="section-p1">
+                <div class="featurestitle">
+                    <h2>Cocina de calidad para un sabor inigualable</h2>
+                    <p>El sabor se forma en los pequeños detalles, y por eso los cuidamos con mimo para que disfrutes nuestros productos como nunca.</p>
+                    <button>Conoce nuestros principios</button>
+                </div>
+                <div class="features">
+                    <div class="feature-box">
+                        <img src="Fotos La Dolça de Sarrià/Icono artesanal.png">
+                        <h6>Producto artesanal</h6>
+                        <p>Nuestras recetas son hechas a mano, para que la calidad y el mimo a los detalles nunca falte. ¡Como lo harías tú!</p>
+                    </div>
+                    <div class="feature-box values-box2">
+                        <img src="Fotos La Dolça de Sarrià/Icono natural.png">
+                        <h6>Ingredientes naturales</h6>
+                        <p>Siempre que es posible, usamos ingredientes naturales, frescos, y de proveedores de confianza. La calidad y salud son esenciales.</p>
+                    </div>
+                    <div class="feature-box values-box3">
+                        <img src="Fotos La Dolça de Sarrià/Icono sostenible.png">
+                        <h6>Proceso sostenible</h6>
+                        <p>Al cocinar, trabajamos con materiales reciclados e implementamos procesos que reducen el desperdicio y promueven su reciclaje.</p>
+                    </div>
+                    <div class="feature-box values-box4">
+                        <img src="Fotos La Dolça de Sarrià/Icono proximidad.png">
+                        <h6>Negocio de proximidad</h6>
+                        <p>La relación personal con nuestro cliente es nuestra razón de ser. Queremos ser tu valor seguro y apostamos por una larga relación comercial. ¡Cuenta con nosotros!</p>
+                    </div>
+                </div>
+            </section> -->
+            <section id="values" class="section-p1">
+                <div class="valuestitle">
+                    <h2>Cocina de calidad para un sabor inigualable</h2>
+                    <p>El sabor se forma en los pequeños detalles, y por eso los cuidamos con mimo para que disfrutes nuestros productos como nunca.</p>
+                    <button class="cta"><a href="nosotros.html">Nuestros principios</a></button>
+                </div>
+                <div class="values">
+                    <div class="value-box">
+                        <img src="Fotos La Dolça de Sarrià/Icono artesanal.png">
+                        <h6>Producto artesanal</h6>
+                        <p>Nuestras recetas son hechas a mano, para que la calidad y el mimo a los detalles nunca falte. ¡Como lo harías tú!</p>
+                    </div>
+                    <div class="value-box values-box2">
+                        <img src="Fotos La Dolça de Sarrià/Icono natural.png">
+                        <h6>Ingredientes naturales</h6>
+                        <p>Siempre que es posible, usamos ingredientes naturales, frescos, y de proveedores de confianza. La calidad y salud son esenciales.</p>
+                    </div>
+                    <div class="value-box values-box3">
+                        <img src="Fotos La Dolça de Sarrià/Icono sostenible.png">
+                        <h6>Proceso sostenible</h6>
+                        <p>Al cocinar, trabajamos con materiales reciclados e implementamos procesos que reducen el desperdicio y promueven su reciclaje.</p>
+                    </div>
+                    <div class="value-box values-box4">
+                        <img src="Fotos La Dolça de Sarrià/Icono proximidad.png">
+                        <h6>Negocio de proximidad</h6>
+                        <p>La relación personal con nuestro cliente es nuestra razón de ser. Queremos ser tu valor seguro y apostamos por una larga relación comercial. ¡Cuenta con nosotros!</p>
+                    </div>
+                </div>
+            </section>
+            <!-- <section id="testimonials" class="section-p1">
+                <div class="testimonials">
+                    <div class="testimonial-box">
+                        <img src="Fotos La Dolça de Sarrià/commas.png">
+                        <h4>Pastel buenísimo y servicio perfecto. ¡Repito 100%!</h4>
+                        <p><em>Nos entregaron el pedido a la hora que acordamos y en todo momento estuvieron atentos a nuestras llamadas y dudas sobre el pedido. La atención que ponen en que todo salga bien es enorme!</em></p>
+                        <div class="reviewer">
+                            <img src="Fotos La Dolça de Sarrià/sonrisa.png">
+                            <div class="inforeviewer">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <p>Juan Latorre, 23/07/2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonialstitle">
+                    <h2>Cocina de calidad para un sabor inigualable</h2>
+                    <p>El sabor se forma en los pequeños detalles, y por eso los cuidamos con mimo para que disfrutes nuestros productos como nunca.</p>
+                    <button>Conoce nuestros principios</button>
+                </div>
+            </section> -->
+            <section id="testimonials" class="section-p1">
+                <div class="testimonials">
+                    <div class="testimonial-box">
+                        <div class="testimonial-back buttontest" >
+                            <span class="material-symbols-outlined">arrow_back_ios</span>
+                        </div>
+                        <div class="testimonial-box-reviews">
+                            <div class="testimonial-box-review review1">
+                                <img src="Fotos La Dolça de Sarrià/commas.png">
+                                <h4>Pastel buenísimo y servicio perfecto. ¡Repito 100%!</h4>
+                                <p><em>Nos entregaron el pedido a la hora que acordamos y en todo momento estuvieron atentos a nuestras llamadas y dudas sobre el pedido. La atención que ponen en que todo salga bien es enorme!</em></p>
+                                <div class="reviewer">
+                                    <img src="Fotos La Dolça de Sarrià/sonrisa.png">
+                                    <div class="inforeviewer">
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <p>Juan Latorre, 23/07/2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-box-review review2">
+                                <img src="Fotos La Dolça de Sarrià/commas.png">
+                                <h4>Pastel buenísimo y servicio perfecto. ¡Repito 100%!</h4>
+                                <p><em>Nos entregaron el pedido a la hora que acordamos y en todo momento estuvieron atentos a nuestras llamadas y dudas sobre el pedido. La atención que ponen en que todo salga bien es enorme!</em></p>
+                                <div class="reviewer">
+                                    <img src="Fotos La Dolça de Sarrià/sonrisa.png">
+                                    <div class="inforeviewer">
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <p>Juan Latorre, 23/07/2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-box-review review3">
+                                <img src="Fotos La Dolça de Sarrià/commas.png">
+                                <h4>Pastel buenísimo y servicio perfecto. ¡Repito 100%!</h4>
+                                <p><em>Nos entregaron el pedido a la hora que acordamos y en todo momento estuvieron atentos a nuestras llamadas y dudas sobre el pedido. La atención que ponen en que todo salga bien es enorme!</em></p>
+                                <div class="reviewer">
+                                    <img src="Fotos La Dolça de Sarrià/sonrisa.png">
+                                    <div class="inforeviewer">
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <p>Juan Latorre, 23/07/2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-box-review review4">
+                                <img src="Fotos La Dolça de Sarrià/commas.png">
+                                <h4>Pastel buenísimo y servicio perfecto. ¡Repito 100%!</h4>
+                                <p><em>Nos entregaron el pedido a la hora que acordamos y en todo momento estuvieron atentos a nuestras llamadas y dudas sobre el pedido. La atención que ponen en que todo salga bien es enorme!</em></p>
+                                <div class="reviewer">
+                                    <img src="Fotos La Dolça de Sarrià/sonrisa.png">
+                                    <div class="inforeviewer">
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <p>Juan Latorre, 23/07/2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-box-review review5">
+                                <img src="Fotos La Dolça de Sarrià/commas.png">
+                                <h4>Pastel buenísimo y servicio perfecto. ¡Repito 100%!</h4>
+                                <p><em>Nos entregaron el pedido a la hora que acordamos y en todo momento estuvieron atentos a nuestras llamadas y dudas sobre el pedido. La atención que ponen en que todo salga bien es enorme!</em></p>
+                                <div class="reviewer">
+                                    <img src="Fotos La Dolça de Sarrià/sonrisa.png">
+                                    <div class="inforeviewer">
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <p>Juan Latorre, 23/07/2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-box-review review6">
+                                <img src="Fotos La Dolça de Sarrià/commas.png">
+                                <h4>Pastel buenísimo y servicio perfecto. ¡Repito 100%!</h4>
+                                <p><em>Nos entregaron el pedido a la hora que acordamos y en todo momento estuvieron atentos a nuestras llamadas y dudas sobre el pedido. La atención que ponen en que todo salga bien es enorme!</em></p>
+                                <div class="reviewer">
+                                    <img src="Fotos La Dolça de Sarrià/sonrisa.png">
+                                    <div class="inforeviewer">
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <p>Juan Latorre, 23/07/2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-box-review review7">
+                                <img src="Fotos La Dolça de Sarrià/commas.png">
+                                <h4>Pastel buenísimo y servicio perfecto. ¡Repito 100%!</h4>
+                                <p><em>Nos entregaron el pedido a la hora que acordamos y en todo momento estuvieron atentos a nuestras llamadas y dudas sobre el pedido. La atención que ponen en que todo salga bien es enorme!</em></p>
+                                <div class="reviewer">
+                                    <img src="Fotos La Dolça de Sarrià/sonrisa.png">
+                                    <div class="inforeviewer">
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <p>Juan Latorre, 23/07/2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-box-review review8">
+                                <img src="Fotos La Dolça de Sarrià/commas.png">
+                                <h4>Pastel buenísimo y servicio perfecto. ¡Repito 100%!</h4>
+                                <p><em>Nos entregaron el pedido a la hora que acordamos y en todo momento estuvieron atentos a nuestras llamadas y dudas sobre el pedido. La atención que ponen en que todo salga bien es enorme!</em></p>
+                                <div class="reviewer">
+                                    <img src="Fotos La Dolça de Sarrià/sonrisa.png">
+                                    <div class="inforeviewer">
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <p>Juan Latorre, 23/07/2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-forward buttontest" >
+                            <span class="material-symbols-outlined">arrow_forward_ios</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-slider">
+                        <span class="material-symbols-outlined active radiotestimonial radiotestimonial1">radio_button_unchecked</span>
+                        <span class="material-symbols-outlined radiotestimonial radiotestimonial2">radio_button_unchecked</span>
+                        <span class="material-symbols-outlined radiotestimonial radiotestimonial3">radio_button_unchecked</span>
+                        <span class="material-symbols-outlined radiotestimonial radiotestimonial4">radio_button_unchecked</span>
+                    </div>
+                </div>
+                <div class="testimonialstitle">
+                    <h2>Nuestros clientes siempre vuelven, ¿por qué será?</h2>
+                    <p>Nuestro foco en que disfrutes nuestros productos es lo que nos hace crear una experiencia por la que todos nuestros clientes vuelven.</p>
+                    <button class="cta"><a href="nosotros.html">Nuestros principios</a></button>
+                    <!-- <div>Deja una reseña<span class="material-symbols-outlined">arrow_right_alt</span></div> -->
+                </div>
+            </section>
+            <section id="newsletter" class="section-p1 section-m1">
+                <div class="newslettertext">
+                    <h4>¡Únete a nuestra comunidad!</h4>
+                    <p>Recibe información sobre nuevas recetas y cursos gratuitos en tu zona, así como <span>ofertas y nuevos productos</span></p>
+                </div>
+                <div class="newsletterbuttongeneral">
+                    <form class="newsletterbutton" name="submit-to-google-sheet">
+                        <input type="email" id="email" name="email" placeholder="Introduce tu correo electrónico" autocomplete="email">
+                        <button class="normal subscribe" type="submit">Subscribirme</button>
+                    </form>
+                    <div class="success">
+                        <div class="successnewsletter">Te has suscrito correctamente!</div>
+                    </div>
+                </div>
+            </section>
+            <section id="faqs" class="section-p1">
+                <div class="faqstitle">
+                    <h2>Preguntas frecuentes</h2>
+                    <p>Resuelve todas tus dudas. ¿No encuentras lo que buscas?</p>
+                    <p>Puedes contactarnos por estas vías y te ayudaremos lo antes posible</p>
+                    <div class="phone">
+                        <span class="material-symbols-outlined">phone_in_talk</span> 
+                        <p>+34 616 765 151</p>
+                    </div>
+                    <div class="mail">
+                        <span class="material-symbols-outlined">attach_email</span>
+                        <p>albert.arusg@gmail.com</p>
+                    </div>
+                    <p>¿Quieres realizar una consulta específica?</p>
+                    <div class="faqsbuttons">
+                        <button class="cta"><a href="empresas.html">Soy empresa</a></button>
+                        <button class="cta"><a href="contacto.html">Escríbenos</a></button>
+                    </div>
+                </div>
+                <div class="faqs">
+                    <div class="faq-box">
+                        <div class="faq-box-question">
+                            <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                            <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                        </div>
+                        <div class="faq-box-answer">
+                            <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                        </div>
+                    </div>
+                    <div class="faq-box">
+                        <div class="faq-box-question">
+                            <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                            <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                        </div>
+                        <div class="faq-box-answer">
+                            <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                        </div>
+                    </div>
+                    <div class="faq-box">
+                        <div class="faq-box-question">
+                            <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                            <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                        </div>
+                        <div class="faq-box-answer">
+                            <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                        </div>
+                    </div>
+                    <div class="faq-box">
+                        <div class="faq-box-question">
+                            <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                            <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                        </div>
+                        <div class="faq-box-answer">
+                            <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                        </div>
+                    </div>
+                    <div class="faq-box">
+                        <div class="faq-box-question">
+                            <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                            <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                        </div>
+                        <div class="faq-box-answer">
+                            <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                        </div>
+                    </div>
+                    <div class="faq-box">
+                        <div class="faq-box-question">
+                            <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                            <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                        </div>
+                        <div class="faq-box-answer">
+                            <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                        </div>
+                    </div>
+                    <div class="faq-box">
+                        <div class="faq-box-question">
+                            <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                            <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                        </div>
+                        <div class="faq-box-answer">
+                            <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                        </div>
+                    </div>
+                    <div class="faq-box">
+                        <div class="faq-box-question">
+                            <h6>¿Con qué antelación mínima debo hacer el pedido?</h6>
+                            <span class="material-symbols-outlined toggle">expand_circle_down</span>
+                        </div>
+                        <div class="faq-box-answer">
+                            <p id="answerfaq">Para poder preparar bien tu pedido necesitaremos 24 horas de antelación. En caso que tengas una urgencia, puedes contactarnos e intentaremos ajustarnos a tu necesidad</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="section-p1">
+                <div class="footercontent">
+                    <div class="column" class="información">
+                        <img src="Fotos La Dolça de Sarrià/Frame 1000001343.svg" alt="Logo empresa">
+                        <h4>Contacto</h4>
+                        <p><strong>Dirección:</strong> Carrer de Fontcoberta, 23, 08034, Barcelona</p>
+                        <p><strong>Teléfono:</strong> +34 616 76 51 51</p>
+                        <p><strong>Correo:</strong> albert.arusg@gmail.com</p>
+                        <p><strong>Horario de apertura:</strong> Lunes a Viernes: 8-21h; Festivos: 9-20h</p>
+                        <div class="follow">
+                            <h4>¡Síguenos!</h4>
+                            <div class="followiconos">
+                                <img src="Fotos La Dolça de Sarrià/facebook2.png">
+                                <img src="Fotos La Dolça de Sarrià/instagram1.png">
+                                <!-- <img src="Fotos La Dolça de Sarrià/instagram2.png"> -->
+                                <img src="Fotos La Dolça de Sarrià/notion.png">
+
+                            </div>
+                        </div>             
+                    </div>
+                    <div class="column" id="productosfooter">
+                        <h4><strong>Productos</strong></h4>
+                            <a href="pasteles.html" alt="Redirección a la página de nuestros pasteles" title="Conoce nuestros pasteles" target="_blank" id=pasteles>Pasteles</a>
+                            <a href="postres.html" alt="Redirección a la página de nuestros postres" title="Conoce nuestros postres" target="_blank" id=postres>Postres</a>
+                            <a href="catering.html" alt="Redirección a la página de nuestros postres" title="Conoce nuestros postres" target="_blank" id=postres>Menús de catering</a>
+                    </div>
+                    <div class="column" class="serviciosfooter">
+                        <h4><strong>Servicios</strong></h4>
+                            <a href="empresas.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Empresas</a>
+                            <a href="catering.html" alt="Redirección a la página de catering" title="Conoce nuestros servicios de catering" target="_blank" id=catering>Catering</a>
+                            <a href="talleres.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Talleres</a>
+                        </div>
+                    <div class="column" class="informaciónfooter">
+                        <h4><strong>Información</strong></h4>
+                            <a href="nosotros.html" alt="Redirección a la página de catering" title="Conoce nuestros servicios de catering" target="_blank" id=catering>Nosotros</a>
+                            <a href="faqs.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Preguntas Frecuentes</a>
+                            <a href="alérgenos.html" alt="Redirección a la página de catering" title="Conoce nuestros servicios de catering" target="_blank" id=catering>Alérgenos</a>
+                            <a href="contacto.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Problemas con el pedido</a>
+                            <a href="contacto.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Reclamaciones</a>
+                    </div>
+                    <div class="column" class="legalfooter">
+                        <h4><strong>Legal</strong></h4>
+                            <a href="Catering.html" alt="Redirección a la página de catering" title="Conoce nuestros servicios de catering" target="_blank" id=catering>Términos y condiciones</a>
+                            <a href="Servicios.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Política de devolución</a>
+                            <a href="Servicios.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Política de cancelación</a>
+                    </div>
+                    <div class="pago">
+                        <p> Métodos de pago aceptados
+                            <img src="Fotos La Dolça de Sarrià/Métodos de pago.png">
+                        </p>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <div>
+                        @ 2024, La Dolça de Sarrià. Todos los derechos reservados.
+                    </div>
+                    <br>
+                    <div class="credits">
+                        Hecho con<span class="material-symbols-outlined iconfilled">favorite</span>en Barcelona
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

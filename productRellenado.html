@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ecommerce website</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/> -->
+        <link rel="stylesheet" href="style.css">
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script> -->
+        <link rel="stylesheet" href="./dist/css/datepicker.material.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">        
+        <script src="./dist/datepicker.js"></script>
+        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="home.html"><img src="Fotos La Dolça de Sarrià/Frame 1000001343.svg" class="logo" alt="Logo web"></a>
+            <div>
+                <ul id="navbar">
+                    <li><a href="pasteles.html">Pasteles</a></li>
+                    <li><a href="postres.html">Postres</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="favorite.html" class="favorite"><span class="material-symbols-outlined favorite">favorite</span></a></li>
+                    <li><a href="cart.html" class="cart"><span class="material-symbols-outlined cart">redeem</span></a></li>        
+                    <a href="#" id="close"><span class="material-symbols-outlined">close</span></a>
+                </ul>
+            </div>
+            <div id="mobile">
+                <a href="cart.html"><i class="fa-solid fa-cart-plus"></i></a>
+                <i id="bar" class="fas fa-outdent"></i>
+            </div>
+        </header>
+        <main>
+            <section class="products">
+                <div class="product-specific">
+                    <div class="mainspace">
+                        <div class="products-back">
+                            <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                        </div>
+                        <img class="main">
+                        <div class="products-forward">
+                            <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                        </div>
+                    </div>
+                    <div class="productsupportimages">
+                        <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie">
+                        <img src="Fotos La Dolça de Sarrià/Cheesecake.jpg" alt="Cheesecake" class="mainpicture">
+                        <img src="Fotos La Dolça de Sarrià/coca de san juan.jpg" alt="san juan">
+                        <img src="Fotos La Dolça de Sarrià/Roscón de reyes.jpg" alt="roscon">
+                    </div>
+                </div>
+                <div class="description">
+                    <h2>Carrot cake</h2>
+                    <div class="product-star">
+                        <span class="material-symbols-outlined iconfilled">star</span>
+                        <span class="material-symbols-outlined iconfilled">star</span>
+                        <span class="material-symbols-outlined iconfilled">star</span>
+                        <span class="material-symbols-outlined iconfilled">star</span>
+                        <span class="material-symbols-outlined iconfilled">star</span>
+                    </div>
+                    <!-- <div class="product-price-save-pay">
+                        <h4>38.8 €</h4>
+                        <a href="#"><span class="material-symbols-outlined favorite">favorite</span></a>                            
+                        <a href="#"><span class="material-symbols-outlined cart">redeem</span></a>        
+                    </div> -->
+                    <div class="productsintro">
+                        <p>
+                            <br>
+                            <br>
+                        </p>
+                    </div>
+                    <div class="productstoggle">
+                        <details>
+                            <summary class="ingredientes">Ingredientes</summary>      
+                            <ul class="ingredientesLista">
+                                <!-- <li>Leche</li>
+                                <li>Huevos</li>
+                                <li>Harina de trigo</li>
+                                <li>Azúcar</li>
+                                <li>Mantequilla</li>
+                                <li>Zanahoria</li>
+                                <li>Queso</li>
+                                <li>Nueces</li>
+                                <li>Aceite de oliva</li>
+                                <li>Sal</li> -->
+                            </ul>  
+                        </details>
+                        <details>
+                            <summary class="alérgenos">Alérgenos</summary>      
+                            <ul class="alérgenosLista">
+                                <li>Puede contener trazas de chocolate</li>
+                                <li>Puede contener trazas de limón</li>
+                            </ul>  
+                        </details>
+                        <details>
+                            <summary class="personalización">Personalización</summary>      
+                            <ul class="personalizaciónLista">
+                                <li>Puede personalizarse la composición del glaseado (queso, limón o vainilla)</li>
+                                <li>Tamaño estándar: 8 raciones (ver primera foto para dimensión de ración)</li>
+                            </ul>  
+                        </details>
+                    </div>
+                    <div class="productscustom">
+                        <div class="productssize">
+                            <h4>Seleccionar tamaño</h4>
+                            <div class="productssizebuttons">
+                                <button class="transparent">4 pers.</button>
+                                <button class="transparent">8 pers.</button>
+                                <button class="transparent">12 pers.</button>
+                            </div>
+                        </div>
+                        <div class="productsdelivery">
+                            <h4>Tipo de entrega</h4>
+                            <div class="productsdeliverybuttons">  
+                                <button class="transparent">Recogida en tienda</button>
+                                <button class="transparent">Entrega a domicilio</button>    
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <!-- <div class="productstiming">
+                        <h4>Selecciona día y hora de entrega</h4>
+                        <p>Recuerda que trabajamos con 24h de antelación</p>
+                        <div class="calendar">
+                            <input type="text" class="datepicker" placeholder="Selecciona el día y hora de entrega">
+                        </div>
+                    </div> -->
+                    <div class="productspricing">
+                        <h4>Precio (IVA incluido)</h4>
+                        <h6>125,96€</h6>
+                        <!-- <a href="contacto.html">Pedir presupuesto personalizado<span class="material-symbols-outlined">open_in_new</span></a> -->
+                    </div>
+                    <div class="productsaccessories">
+                        <h4>Añade tus extras</h4>
+                        <p>También puedes completar tu pedido con otros productos más abajo</p>
+                        <div class="accessoriescontent">
+                            <div class="velas">
+                                <div class="selector">
+                                    <div class="foto">
+                                        <img src="Fotos La Dolça de Sarrià/Velas.jpg" alt="Velas de cumpleaños">
+                                    </div>
+                                    <span class="material-symbols-outlined addaccessory">add_circle</span>
+                                    <span class="material-symbols-outlined checkaccessory">task_alt</span>
+                                </div>
+                                <p>Velas de cumpleaños</p>
+                                <input type="number" class="numerovelas textaccessory" placeholder="Nº años">
+                            </div>
+                            <div class="mensaje">
+                                <div class="selector">
+                                    <div class="foto">
+                                        <img src="Fotos La Dolça de Sarrià/Mensaje feliz cumpleaños.png" alt="Mensaje de Feliz Cumpleaños para añadir al pastel">
+                                    </div>
+                                    <span class="material-symbols-outlined addaccessory">add_circle</span>
+                                    <span class="material-symbols-outlined checkaccessory">task_alt</span>
+                                </div>
+                                <p>Mensaje personalizado</p>
+                                <input type="text" class="mensajepersonalizado textaccessory" placeholder="Escribe tu mensaje">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="herocta">
+                        <button class="cta buynow"><a href="checkout.html">Comprar ahora</a></button>
+                        <button class="cta"><a href="contacto.html">Pedir presupuesto</a></button>
+                    </div>
+                </div>
+            </section>
+            <section class="additions">
+                <div class="additionsintro">
+                    <h4>Completa tu pedido</h4>
+                    <p>Añade al carrito productos que complementan a la perfección tu elección</p>
+                </div>
+                <div class="additionsslider">
+                    <div class="productos-back">
+                        <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                    </div>
+                    <div class="contentslide">
+                        <div class="addition">
+                            <div class="product">
+                                <div class="product-slide">
+                                    <div class="mainspace">
+                                        <div class="product-back">
+                                            <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                                        </div>
+                                        <img class="main">
+                                        <div class="product-forward">
+                                            <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                                        </div>
+                                    </div>
+                                    <div class="productsupportimages">
+                                        <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie">
+                                        <img src="Fotos La Dolça de Sarrià/Cheesecake.jpg" alt="Cheesecake" class="mainpicture">
+                                        <img src="Fotos La Dolça de Sarrià/coca de san juan.jpg" alt="san juan">
+                                        <img src="Fotos La Dolça de Sarrià/Roscón de reyes.jpg" alt="roscon">
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <span class="tag pastel">Pastel</span>
+                                    <span class="tag frio">Frío</span>
+                                    <h5>Brownie de chocolate y nueces</h5>
+                                    <div class="product-star">
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                    </div>
+                                    <div class="product-price-save-pay">
+                                        <h4>38.8 €</h4>
+                                        <a href="#"><span class="material-symbols-outlined favorite">favorite</span></a>                            
+                                        <a href="#"><span class="material-symbols-outlined cart">redeem</span></a>        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addition">
+                            <div class="product">
+                                <div class="product-slide">
+                                    <div class="mainspace">
+                                        <div class="product-back">
+                                            <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                                        </div>
+                                        <img class="main">
+                                        <div class="product-forward">
+                                            <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                                        </div>
+                                    </div>
+                                    <div class="productsupportimages">
+                                        <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie">
+                                        <img src="Fotos La Dolça de Sarrià/Cheesecake.jpg" alt="Cheesecake" class="mainpicture">
+                                        <img src="Fotos La Dolça de Sarrià/coca de san juan.jpg" alt="san juan">
+                                        <img src="Fotos La Dolça de Sarrià/Roscón de reyes.jpg" alt="roscon">
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <span class="tag pastel">Pastel</span>
+                                    <span class="tag frio">Frío</span>
+                                    <h5>Brownie de chocolate y nueces</h5>
+                                    <div class="product-star">
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                    </div>
+                                    <div class="product-price-save-pay">
+                                        <h4>38.8 €</h4>
+                                        <a href="#"><span class="material-symbols-outlined favorite">favorite</span></a>                            
+                                        <a href="#"><span class="material-symbols-outlined cart">redeem</span></a>        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addition">
+                            <div class="product">
+                                <div class="product-slide">
+                                    <div class="mainspace">
+                                        <div class="product-back">
+                                            <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                                        </div>
+                                        <img class="main">
+                                        <div class="product-forward">
+                                            <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                                        </div>
+                                    </div>
+                                    <div class="productsupportimages">
+                                        <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie">
+                                        <img src="Fotos La Dolça de Sarrià/Cheesecake.jpg" alt="Cheesecake" class="mainpicture">
+                                        <img src="Fotos La Dolça de Sarrià/coca de san juan.jpg" alt="san juan">
+                                        <img src="Fotos La Dolça de Sarrià/Roscón de reyes.jpg" alt="roscon">
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <span class="tag pastel">Pastel</span>
+                                    <span class="tag frio">Frío</span>
+                                    <h5>Brownie de chocolate y nueces</h5>
+                                    <div class="product-star">
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                    </div>
+                                    <div class="product-price-save-pay">
+                                        <h4>38.8 €</h4>
+                                        <a href="#"><span class="material-symbols-outlined favorite">favorite</span></a>                            
+                                        <a href="#"><span class="material-symbols-outlined cart">redeem</span></a>        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addition">
+                            <div class="product">
+                                <div class="product-slide">
+                                    <div class="mainspace">
+                                        <div class="product-back">
+                                            <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                                        </div>
+                                        <img class="main">
+                                        <div class="product-forward">
+                                            <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                                        </div>
+                                    </div>
+                                    <div class="productsupportimages">
+                                        <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie">
+                                        <img src="Fotos La Dolça de Sarrià/Cheesecake.jpg" alt="Cheesecake" class="mainpicture">
+                                        <img src="Fotos La Dolça de Sarrià/coca de san juan.jpg" alt="san juan">
+                                        <img src="Fotos La Dolça de Sarrià/Roscón de reyes.jpg" alt="roscon">
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <span class="tag pastel">Pastel</span>
+                                    <span class="tag frio">Frío</span>
+                                    <h5>Brownie de chocolate y nueces</h5>
+                                    <div class="product-star">
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                    </div>
+                                    <div class="product-price-save-pay">
+                                        <h4>38.8 €</h4>
+                                        <a href="#"><span class="material-symbols-outlined favorite">favorite</span></a>                            
+                                        <a href="#"><span class="material-symbols-outlined cart">redeem</span></a>        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addition">
+                            <div class="product">
+                                <div class="product-slide">
+                                    <div class="mainspace">
+                                        <div class="product-back">
+                                            <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                                        </div>
+                                        <img class="main">
+                                        <div class="product-forward">
+                                            <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                                        </div>
+                                    </div>
+                                    <div class="productsupportimages">
+                                        <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie">
+                                        <img src="Fotos La Dolça de Sarrià/Cheesecake.jpg" alt="Cheesecake" class="mainpicture">
+                                        <img src="Fotos La Dolça de Sarrià/coca de san juan.jpg" alt="san juan">
+                                        <img src="Fotos La Dolça de Sarrià/Roscón de reyes.jpg" alt="roscon">
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <span class="tag pastel">Pastel</span>
+                                    <span class="tag frio">Frío</span>
+                                    <h5>Brownie de chocolate y nueces</h5>
+                                    <div class="product-star">
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                    </div>
+                                    <div class="product-price-save-pay">
+                                        <h4>38.8 €</h4>
+                                        <a href="#"><span class="material-symbols-outlined favorite">favorite</span></a>                            
+                                        <a href="#"><span class="material-symbols-outlined cart">redeem</span></a>        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addition">
+                            <div class="product">
+                                <div class="product-slide">
+                                    <div class="mainspace">
+                                        <div class="product-back">
+                                            <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                                        </div>
+                                        <img class="main">
+                                        <div class="product-forward">
+                                            <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                                        </div>
+                                    </div>
+                                    <div class="productsupportimages">
+                                        <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie">
+                                        <img src="Fotos La Dolça de Sarrià/Cheesecake.jpg" alt="Cheesecake" class="mainpicture">
+                                        <img src="Fotos La Dolça de Sarrià/coca de san juan.jpg" alt="san juan">
+                                        <img src="Fotos La Dolça de Sarrià/Roscón de reyes.jpg" alt="roscon">
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <span class="tag pastel">Pastel</span>
+                                    <span class="tag frio">Frío</span>
+                                    <h5>Brownie de chocolate y nueces</h5>
+                                    <div class="product-star">
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                    </div>
+                                    <div class="product-price-save-pay">
+                                        <h4>38.8 €</h4>
+                                        <a href="#"><span class="material-symbols-outlined favorite">favorite</span></a>                            
+                                        <a href="#"><span class="material-symbols-outlined cart">redeem</span></a>        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addition">
+                            <div class="product">
+                                <div class="product-slide">
+                                    <div class="mainspace">
+                                        <div class="product-back">
+                                            <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                                        </div>
+                                        <img class="main">
+                                        <div class="product-forward">
+                                            <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                                        </div>
+                                    </div>
+                                    <div class="productsupportimages">
+                                        <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie">
+                                        <img src="Fotos La Dolça de Sarrià/Cheesecake.jpg" alt="Cheesecake" class="mainpicture">
+                                        <img src="Fotos La Dolça de Sarrià/coca de san juan.jpg" alt="san juan">
+                                        <img src="Fotos La Dolça de Sarrià/Roscón de reyes.jpg" alt="roscon">
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <span class="tag pastel">Pastel</span>
+                                    <span class="tag frio">Frío</span>
+                                    <h5>Brownie de chocolate y nueces</h5>
+                                    <div class="product-star">
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                    </div>
+                                    <div class="product-price-save-pay">
+                                        <h4>38.8 €</h4>
+                                        <a href="#"><span class="material-symbols-outlined favorite">favorite</span></a>                            
+                                        <a href="#"><span class="material-symbols-outlined cart">redeem</span></a>        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addition">
+                            <div class="product">
+                                <div class="product-slide">
+                                    <div class="mainspace">
+                                        <div class="product-back">
+                                            <span class="material-symbols-outlined back">arrow_back_ios_new</span>
+                                        </div>
+                                        <img class="main">
+                                        <div class="product-forward">
+                                            <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                                        </div>
+                                    </div>
+                                    <div class="productsupportimages">
+                                        <img src="Fotos La Dolça de Sarrià/Brownie.jpg" alt="Brownie">
+                                        <img src="Fotos La Dolça de Sarrià/Cheesecake.jpg" alt="Cheesecake" class="mainpicture">
+                                        <img src="Fotos La Dolça de Sarrià/coca de san juan.jpg" alt="san juan">
+                                        <img src="Fotos La Dolça de Sarrià/Roscón de reyes.jpg" alt="roscon">
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <span class="tag pastel">Pastel</span>
+                                    <span class="tag frio">Frío</span>
+                                    <h5>Brownie de chocolate y nueces</h5>
+                                    <div class="product-star">
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                        <span class="material-symbols-outlined iconfilled">star</span>
+                                    </div>
+                                    <div class="product-price-save-pay">
+                                        <h4>38.8 €</h4>
+                                        <a href="#"><span class="material-symbols-outlined favorite">favorite</span></a>                            
+                                        <a href="#"><span class="material-symbols-outlined cart">redeem</span></a>        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="productos-forward">
+                        <span class="material-symbols-outlined forward">arrow_forward_ios</span>
+                    </div>
+                </div>
+                <div class="additionssteps">
+                    <div class="stepsliding">
+                        <span class="material-symbols-outlined active stepslider stepslider1" data-target="product1, product2, product3, product4">radio_button_unchecked</span>
+                        <span class="material-symbols-outlined stepslider stepslider2" data-target="product5, product6, product7, product8">radio_button_unchecked</span>
+                        <span class="material-symbols-outlined stepslider stepslider2" data-target="product5, product6, product7, product8">radio_button_unchecked</span>
+                        <span class="material-symbols-outlined stepslider stepslider2" data-target="product5, product6, product7, product8">radio_button_unchecked</span>
+                        <span class="material-symbols-outlined stepslider stepslider3">radio_button_unchecked</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="section-p1">
+                <div class="footercontent">
+                    <div class="column" class="información">
+                        <img src="Fotos La Dolça de Sarrià/Frame 1000001343.svg" alt="Logo empresa">
+                        <h4>Contacto</h4>
+                        <p><strong>Dirección:</strong> Carrer de Fontcoberta, 23, 08034, Barcelona</p>
+                        <p><strong>Teléfono:</strong> +34 616 76 51 51</p>
+                        <p><strong>Correo:</strong> Carrer de Fontcoberta, 23, 08034, Barcelona</p>
+                        <p><strong>Horario de apertura:</strong> Lunes a Viernes: 8-21h; Festivos: 9-16h</p>
+                        <div class="follow">
+                            <h4>¡Síguenos!</h4>
+                            <div class="iconos">
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-instagram"></i>
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                        </div>             
+                    </div>
+                    <div class="column" id="productosfooter">
+                        <h4><strong>Productos</strong></h4>
+                            <a href="Pasteles.html" alt="Redirección a la página de nuestros pasteles" title="Conoce nuestros pasteles" target="_blank" id=pasteles>Pasteles</a>
+                            <a href="Postres.html" alt="Redirección a la página de nuestros postres" title="Conoce nuestros postres" target="_blank" id=postres>Postres</a>
+                            <a href="Postres.html" alt="Redirección a la página de nuestros postres" title="Conoce nuestros postres" target="_blank" id=postres>Pastas de sobremesa</a>
+                            <a href="Pasteles.html" alt="Redirección a la página de nuestros pasteles" title="Conoce nuestros pasteles" target="_blank" id=pasteles>Guisos</a>
+                    </div>
+                    <div class="column" class="serviciosfooter">
+                        <h4><strong>Servicios</strong></h4>
+                            <a href="Catering.html" alt="Redirección a la página de catering" title="Conoce nuestros servicios de catering" target="_blank" id=catering>Catering</a>
+                            <a href="Servicios.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Servicios</a>
+                    </div>
+                    <div class="column" class="informaciónfooter">
+                        <h4><strong>Información</strong></h4>
+                            <a href="Catering.html" alt="Redirección a la página de catering" title="Conoce nuestros servicios de catering" target="_blank" id=catering>Nosotros</a>
+                            <a href="Servicios.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Alérgenos</a>
+                            <a href="Catering.html" alt="Redirección a la página de catering" title="Conoce nuestros servicios de catering" target="_blank" id=catering>Problemas con el pedido</a>
+                            <a href="Servicios.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Reclamaciones</a>
+                    </div>
+                    <div class="column" class="legalfooter">
+                        <h4><strong>Legal</strong></h4>
+                            <a href="Catering.html" alt="Redirección a la página de catering" title="Conoce nuestros servicios de catering" target="_blank" id=catering>Términos y condiciones</a>
+                            <a href="Servicios.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Política de devolución</a>
+                            <a href="Servicios.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Política de cancelación</a>
+                    </div>
+                    <div class="pago">
+                        <p> Métodos de pago aceptados
+                            <img src="Fotos La Dolça de Sarrià/Métodos de pago.png">
+                        </p>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <div>@2024, La Dolça de Sarrià. Todos los derechos reservados.</div>
+                    <br>
+                    <div>Hecho con<span class="material-symbols-outlined">favorite</span>en Barcelona</div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ecommerce website</title>
+        <link rel="shortcut icon" type="image/png" href="Fotos La Dolça de Sarrià/Icono cake.svg">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="home.html"><img src="Fotos La Dolça de Sarrià/Frame 1000001343.svg" class="logo" alt="Logo web"></a>
+            <div>
+                <ul id="navbar">
+                    <li>
+                        <a class="navbaritem" href="pasteles.html">Pasteles<span class="material-symbols-outlined arrowheader">keyboard_arrow_down</span></a>
+                        <div class="headerdesplegable">
+                            <ul id="listaheaderdesplegable">
+                                <li><a href="pasteles.html#clásicos">Clásicos</a></li>
+                                <li><a href="pasteles.html#cumpleaños">Cumpleaños</a></li>
+                                <li><a href="pasteles.html#fondant">Fondant</a></li>
+                                <li><a href="pasteles.html#temáticos">Temáticos</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="navbaritem" href="postres.html">Postres<span class="material-symbols-outlined arrowheader">keyboard_arrow_down</span></a>
+                        <div class="headerdesplegable">
+                            <ul id="listaheaderdesplegable">
+                                <li><a href="pasteles.html#clásicos">Fríos</a></li>
+                                <li><a href="pasteles.html#cumpleaños">Calientes</a></li>
+                                <li><a href="pasteles.html#fondant">Sobremesa</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="navbaritem" href="servicios.html">Servicios<span class="material-symbols-outlined arrowheader">keyboard_arrow_down</span></a>
+                        <div class="headerdesplegable">
+                            <ul id="listaheaderdesplegable">
+                                <li><a href="pasteles.html#catering">Catering</a></li>
+                                <li><a href="pasteles.html#empresas">Empresas</a></li>
+                                <li><a href="pasteles.html#talleres">Talleres</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li>
+                        <a class="navbaritem" href="contacto.html">Contacto<span class="material-symbols-outlined arrowheader">keyboard_arrow_down</span></a>
+                        <div class="headerdesplegable">
+                            <ul id="listaheaderdesplegable">
+                                <li><a href="contacto.html#FAQ's">FAQ's</a></li>
+                                <li><a href="pasteles.html#contacto">Contacto</a></li>
+                            </ul>
+                        </div> 
+                    </li>
+                    <li><a href="favorite.html" class="favorite"><span class="material-symbols-outlined favorite">favorite</span></a></li>
+                    <li><a href="cart.html" class="cart"><span class="material-symbols-outlined cart">redeem</span></a></li>        
+                    <a href="#" id="close"><span class="material-symbols-outlined">close</span></a>
+                </ul>
+            </div>
+            <div id="mobile">
+                <a href="cart.html"><i class="fa-solid fa-cart-plus"></i></a>
+                <i id="bar" class="fas fa-outdent"></i>
+            </div>
+        </header>
+        <main>
+            <section class="checkout">
+                <div class="checkoutcustom">
+                    <div class="productstiming">
+                        <h4>Selecciona día y hora de entrega</h4>
+                        <p>Recuerda que trabajamos con 24h de antelación</p>
+                        <div id="calendarContainer">
+                        </div>
+                    </div>
+                    <div class="checkoutform">
+                        <h4>Completa tus datos de contacto</h4>
+                        <form class="checkoutformulario">
+                            <!-- action="https://api.web3forms.com/submit" method="POST" -->
+                            <input type="hidden" name="access_key" value="5bd268b8-8dd3-4769-b3e5-6b27ffbff391">
+                            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                            <input type="hidden" name="subject" value="Reserva confirmada">
+                            <input type="hidden" name="from_name" value="La Dolça de Sarrià">
+                            <!-- <input type="hidden" name="ccemail" value="ninagb50g@gmail.com"> -->
+                            <!-- <input type="hidden" name="ccemail" value="cliente"> -->
+                            <input type="hidden" name="replyto" value="albert.arusg@gmail.com">
+    
+                            <div class="fieldform">
+                                <label for="name" class="label-text"><p>Nombre</p><h4>*</h4></label>
+                                <input type="text" name="name" id="name" title="Campo obligatorio" placeholder="Sergio" required aria-errormessage="errormessageform" aria-invalid="false"/>
+                                <div class="errormessageform">Debes introducir tu nombre</div>    
+                            </div>
+    
+                            <div class="fieldform">
+                                <label for="surname" class="label-text"><p>Apellido</p><h4>*</h4></label>
+                                <input type="text" name="surname" id="surname" title="Campo obligatorio" placeholder="Marquina" required/>
+                                <div class="errormessageform">Debes introducir tu apellido</div>    
+                            </div>
+    
+                            <div class="fieldform">
+                                <label for="email" class="label-text"><p>Correo electrónico</p><h4>*</h4></label>
+                                <input type="email" name="email" id="email" title="Campo obligatorio" placeholder="profesor@gmail.com" required autocomplete="email"/>
+                                <div class="errormessageform">Debes introducir tu email</div>
+                                <div class="emailinvalid">El email introduce no es correcto</div>    
+                            </div>
+    
+                            <div class="fieldform">
+                                <label for="phone" class="label-text"><p>Teléfono (opcional)</p></label>
+                                <input type="tel" name="phone" id="phone" title="Campo opcional" placeholder="638 256 172" autocomplete="tel"/>    
+                            </div>
+
+                            <!-- <div class="fieldform">
+                                <input type="datetime-local" lang="es">
+                            </div> -->
+    
+                        </form>
+                    </div>
+                </div>
+                <div class="ckeckoutsummary">
+                    <!-- <div class="checkoutdescription">
+                        <h3>Resumen de tu pedido</h3>
+                        <div class="checkoutproduct">
+                            <h4>Productos seleccionados</h4>
+                            <p>Carrot cake</p>
+                            <p>Velas (12 años)</p>
+                        </div>
+                        <div class="checkoutsize">
+                            <h4>Tamaño seleccionado</h4>
+                            <p>10 personas</p>
+                        </div>
+                        <div class="productspricing">
+                            <h4>Precio (IVA incluido)</h4>
+                            <p>125,96€</p>
+                        </div>
+                        <hr>
+                        <div class="checkoutdate">
+                            <h4>Fecha de entrega</h4>
+                            <div id="infoContainer"></div>
+                        </div>
+                        <div class="checkoutdelivery">
+                            <h4>Tipo de entrega</h4>
+                            <p>Entrega a domicilio</p>
+                        </div>
+                        <hr>
+                        <div class="checkoutdata">
+    
+                        </div>
+                        <br>
+                        <div class="checkoutsubmit">
+                            <button type="submit" class="cta">Confirmar y reservar</button>
+                        </div>
+                    </div> -->
+                    <div class="checkoutdescription">
+                        <h3>Resumen de tu pedido</h3>
+                        <div class="checkoutdataproduct">
+                            <div class="checkoutproduct">
+                                <h6>Productos seleccionados</h6>
+                                <div class="productoprincipal">
+                                    <p class="nombreProducto"></p>
+                                    <p class="productoPrecio"></p>
+                                </div>
+                                <div class="productoaccesoriovela">
+                                    <p class="nombreAccesorio">Velas: <span class="textoAccesorio"></span> años</p>
+                                    <p class="accesorioPrecio">4€</p>
+                                </div>
+                                <div class="productoaccesoriomensaje">
+                                    <p class="nombreAccesorio">Mensaje: <span class="textoAccesorio"></span></p>
+                                    <p class="accesorioPrecio">4€</p>
+                                </div>
+                                <p class="nombre"></p>
+                            </div>
+                            <div class="checkoutsize">
+                                <p></p>
+                            </div>
+                            <div class="productpricing">
+                                <p class="pricingtotaltext">Total: </p>
+                                <p class="pricingtotalvalue"></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="checkoutdatadelivery">
+                            <h6>Datos de entrega</h6>
+                            <div class="checkoutdelivery">
+                                <p></p>
+                            </div>
+                            <div class="checkoutdate">
+                                <div id="infoContainer"></div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="checkoutdataclient">
+                            <h6>Datos de contacto</h6>
+                        </div>
+                        <br>
+                        <div class="checkoutsubmit">
+                            <button type="submit" class="cta submitcheckout">Confirmar y reservar</button>
+                        </div>
+                    </div>
+                    <div class="successformcheckout">
+                        <span class="material-symbols-outlined checkform">check_circle</span>
+                        <h3>¡Mensaje recibido!</h3>
+                        <p>Gracias por tu mensaje e interés! <br>
+                            <br>
+                            Nos ponemos a ello enseguida para darte una respuesta lo antes posible.</p>
+                    </div>
+                    <div class="failformcheckout">
+                        <span class="material-symbols-outlined errorform">sentiment_dissatisfied</span>
+                        <h3>Error en el envío</h3>
+                        <p>No hemos podido recibir tu mensaje. Podrías volver a intentarlo? Queremos ayudarte!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="section-p1">
+                <div class="footercontent">
+                    <div class="column" class="información">
+                        <img src="Fotos La Dolça de Sarrià/Frame 1000001343.svg" alt="Logo empresa">
+                        <h4>Contacto</h4>
+                        <p><strong>Dirección:</strong> Carrer de Fontcoberta, 23, 08034, Barcelona</p>
+                        <p><strong>Teléfono:</strong> +34 616 76 51 51</p>
+                        <p><strong>Correo:</strong> albert.arusg@gmail.com</p>
+                        <p><strong>Horario de apertura:</strong> Lunes a Viernes: 8-21h; Festivos: 9-16h</p>
+                        <div class="follow">
+                            <h4>¡Síguenos!</h4>
+                            <div class="followiconos">
+                                <img src="Fotos La Dolça de Sarrià/facebook2.png">
+                                <img src="Fotos La Dolça de Sarrià/instagram1.png">
+                                <!-- <img src="Fotos La Dolça de Sarrià/instagram2.png"> -->
+                                <img src="Fotos La Dolça de Sarrià/notion.png">
+
+                            </div>
+                        </div>             
+                    </div>
+                    <div class="column" id="productosfooter">
+                        <h4><strong>Productos</strong></h4>
+                            <a href="pasteles.html" alt="Redirección a la página de nuestros pasteles" title="Conoce nuestros pasteles" target="_blank" id=pasteles>Pasteles</a>
+                            <a href="postres.html" alt="Redirección a la página de nuestros postres" title="Conoce nuestros postres" target="_blank" id=postres>Postres</a>
+                            <a href="catering.html" alt="Redirección a la página de nuestros postres" title="Conoce nuestros postres" target="_blank" id=postres>Menús de catering</a>
+                    </div>
+                    <div class="column" class="serviciosfooter">
+                        <h4><strong>Servicios</strong></h4>
+                            <a href="empresas.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Empresas</a>
+                            <a href="catering.html" alt="Redirección a la página de catering" title="Conoce nuestros servicios de catering" target="_blank" id=catering>Catering</a>
+                            <a href="talleres.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Talleres</a>
+                        </div>
+                    <div class="column" class="informaciónfooter">
+                        <h4><strong>Información</strong></h4>
+                            <a href="nosotros.html" alt="Redirección a la página de catering" title="Conoce nuestros servicios de catering" target="_blank" id=catering>Nosotros</a>
+                            <a href="faqs.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Preguntas Frecuentes</a>
+                            <a href="alérgenos.html" alt="Redirección a la página de catering" title="Conoce nuestros servicios de catering" target="_blank" id=catering>Alérgenos</a>
+                            <a href="contacto.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Problemas con el pedido</a>
+                            <a href="contacto.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Reclamaciones</a>
+                    </div>
+                    <div class="column" class="legalfooter">
+                        <h4><strong>Legal</strong></h4>
+                            <a href="Catering.html" alt="Redirección a la página de catering" title="Conoce nuestros servicios de catering" target="_blank" id=catering>Términos y condiciones</a>
+                            <a href="Servicios.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Política de devolución</a>
+                            <a href="Servicios.html" alt="Redirección a la página de Servicios" title="Ir a página de Servicios" target="_blank" id=servicios>Política de cancelación</a>
+                    </div>
+                    <div class="pago">
+                        <p> Métodos de pago aceptados
+                            <img src="Fotos La Dolça de Sarrià/Métodos de pago.png">
+                        </p>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <div>
+                        @ 2024, La Dolça de Sarrià. Todos los derechos reservados.
+                    </div>
+                    <br>
+                    <div class="credits">
+                        Hecho con<span class="material-symbols-outlined iconfilled">favorite</span>en Barcelona
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
